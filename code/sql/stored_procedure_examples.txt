@@ -34,3 +34,5 @@ update book_statistics set subscribed_count=@subscribed+1, available_count=@avai
 end
 
 
+create function GetSubscriptionHistory()
+select * from books_subscription_history

@@ -193,6 +193,12 @@ database engine for the instance
 SQL Server (MSSQLSERVER): windows pc name (JOYDIP-PC)
 SQL Server (SQLEXPRESS): windows pc name\sqlexpress (JOYDIP-PC\sqlexpress)
 
+stored procedures
+user-defined functions
+
+where, group-by, order by, having, distinct
+joins- inner, outer, cross join, self join
+
 	
 
 
