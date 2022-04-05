@@ -1,10 +1,8 @@
 --stored procedures: pre-compiled sql statement which can be created once, saved in database and executed again and again. provides reusability, pre-compilation etc.
 
 alter procedure InsertSubscriptionHistory
-
 @bookid int,
 @subscriberid int
-
 as
 begin
 declare @currentdate date
@@ -34,3 +32,5 @@ select @available= available_count from book_statistics
 select @subscribed= subscribed_count from book_statistics
 update book_statistics set subscribed_count=@subscribed+1, available_count=@available-1 where book_id=@bookid
 end
+
+

@@ -1,0 +1,55 @@
+/*
+create function GetAvailableBookCount(@bookid int)
+returns int
+begin
+declare @count int
+select @count= available_count from book_statistics where book_id=@bookid
+return @count
+end
+
+
+use nagradb
+declare @AvailableBooks int
+select @AvailableBooks= dbo.GetAvailableBookCount(1234567890)
+print(@AvailableBooks)
+go
+*/
+
+/*
+create function GetSubscriptionHistory()
+returns TABLE
+as
+	return select * from books_subscription_history
+
+
+use nagradb
+select * from dbo.GetSubscriptionHistory()
+go
+
+//
+create function GetSubscribedBookCountOfaSubscriber(@subid int)
+returns @SubscriberBooks TABLE (sub_name varchar(50), books_subscribed int)
+as
+begin
+declare @name varchar(50)
+select @name = subscriber_name from subscribers where subscriber_id=@subid
+--print @name
+
+declare @count int
+select @count= COUNT(book_isbn) from books_subscription_history where subscriber_id=@subid
+
+insert into @SubscriberBooks(sub_name,books_subscribed) values(@name,@count)
+
+return
+end
+
+
+
+use nagradb
+select * from dbo.GetSubscribedBookCountOfaSubscriber(1)
+go
+
+*/
+
+
+	
