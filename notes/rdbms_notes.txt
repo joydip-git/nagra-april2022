@@ -1,1 +1,158 @@
-1. 
+RDBMS:
+-------------------------------------------------------------------------
+s/w store, retrieve any data already in the form of table etc.
+
+Database and s/w to manipulate the data
+
+Relational database: (SQL databases)
+---------------------------------------
+storage of data, where the data is stored in the form of tables (relation), rows (tuples) and columns (attributes/fields)
+
+primary key: 
+-------------------------------------------------------
+unique value which will identify a record in a table
+to avoid duplication of record
+
+Normalization:
+-----------------------------------------------------
+it is a process of organizing the data in database
+Insertion, Updation and Deletion of anomalies can be removed by Normalization (minimizing the redundancy from a relation or set of relations)
+
+
+Relational Model?
+---------------------------
+
+JSON format=> BSON format
+MongoDB (No SQL database)
+GrpahDB
+etc.
+
+students table:
+----------------------------
+
+multivalued column
+student_id student_name student_phone student_location
+---------------------------------------------------------------
+11		anil	9090909090,	bangalore
+			9090909091,
+			9090909092
+
+12		sunil	9191919191,	chennai
+			9191919192
+
+a relation (table) will be 1 NF:
+	atomic data in tables
+	no column/attribute can store multiple values
+	does not allow multi-valued, composite attribute or the combination of both
+1 NF:
+duplicate records with just one column value being different
+student_id student_name student_phone student_location
+---------------------------------------------------------------
+11		anil	9090909090	bangalore
+11		anil	9090909091	bangalore
+12		sunil	9191919191	chennai
+12		sunil	9191919192	chennai
+
+2 NF: (should be in 1 NF)
+all non-key attributes (columns) will be fully functional dependent on primary key column
+
+student_id (pk) student_name student_location
+----------------------------------------------------
+11		anil		bangalore
+12		sunil		chennai
+
+
+phone_id(pk)	student_id	phone_number
+--------------------------------------------------------
+1		11		9090909090
+2		11		9090909091
+3		11		9090909092
+4		12		9191919191
+5		12		9191919192
+
+
+book_name	author_name	book_price	book_isbn
+---------------------------------------------------------------------
+abcd		anil		1000		1234567890
+		,sunil	
+	
+mnop		anil,		2000		1234567809
+		sunil,
+		vinod
+(1 NF)
+book_name	author_name	book_price	book_isbn	subscriber_name		sub_start_date		sub_end_date
+----------------------------------------------------------------------------------------------------------------------------
+abcd		anil		1000		1234567890	john			4/4/2022		4/11/2022
+abcd		anil		1000		1234567890	paul			4/5/2022		4/12/2022
+abcd		sunil		1000		1234567890	john, paul
+mnop		anil		2000		1234567809	john, paul
+mnop		sunil		2000		1234567809	john, paul
+mnop		vinod		2000		1234567809	john, paul
+
+
+author_id(pk)	author_name	
+----------------------------
+1		anil
+2		sunil
+3		vinod
+
+book_isbn(fk)	book_name	price
+---------------------------------------
+1234567890	abcd		1000
+1234567809	mnop		2000
+
+composite key (associtaion) table
+
+book_isbn(fk) author_id(fk)
+------------------------------
+1234567890	1
+1234567890	2
+1234567809	1
+1234567809	2
+1234567809	3
+
+subscriber_id(pk)	subscriber_name		
+------------------------------------------
+1			john			
+1			john			
+2			paul			
+2			paul			
+
+books_subscription_table
+------------------------------
+entry_id(pk)	book_isbn(fk)	subscriber_id(fk)	sub_start_date	sub_end_date
+---------------------------------------------------------------------------------------
+1		1234567890		1		4/4/20222	4/11/2022
+2		1234567809		1		4/4/20222	4/11/2022
+3		1234567890		2		4/5/20222	4/12/2022
+4		1234567809		2		4/5/20222	4/12/2022
+
+1. database
+2. RDBMS
+3. how data is organized in RDBMS database?
+4. NoSql database vs. Sql Database
+5. primary key: what it is and what is it's necessity?
+6. Normalization: 1 NF, 2 NF, 3 NF
+7. composite key and association table
+8. foreign key
+9. query:
+	a. create database, create table, alter table
+	b. selecting records
+	c. 
+10. constraints: 
+	a.
+	b.
+	c.
+	.............
+
+	
+
+
+
+
+
+
+
+
+
+
