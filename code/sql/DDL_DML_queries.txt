@@ -1,0 +1,71 @@
+--create database nagradb
+
+create table books(
+book_isbn int not null primary key,
+book_name varchar(50) not null,
+book_price decimal(18,2) default(0)
+)
+
+create table author(
+author_id int not null,
+author_name  varchar(50) not null,
+constraint pk_author_authorid primary key (author_id)
+)
+
+create table subscribers(
+subscriber_id int not null,
+subscriber_name varchar(50) not null,
+subsriber_phone bigint not null
+)
+
+alter table subscribers
+add constraint pk_subscribers_subscriber_id primary key(subscriber_id)
+
+create table books_subscription_history(
+entry_id int not null primary key identity(100,1),
+book_isbn int,
+subscriber_id int,
+start_date date not null,
+end_date date not null,
+constraint fk_book_book_isbn_books_subscription_history_book_isbn foreign key (book_isbn) references books(book_isbn),
+constraint fk_subscribers_subscriber_id_books_subscription_history_subscriber_id foreign key (subscriber_id) references subscribers (subscriber_id)
+)
+
+create table book_statistics(
+entry_id int primary key not null identity(1,1),
+book_id int references books (book_isbn) not null,
+total_count int default(0),
+subscribed_count int default(0),
+available_count int default(0)
+)
+
+insert into books(book_isbn,book_name,book_price) values(1234567890, 'the pillars of the earth', 699.00)
+insert into books(book_name,book_isbn,book_price) values('the alchemist',1234567891, 499.00)
+
+insert into author values(1, 'anil')
+insert into author(author_name, author_id) values('sunil',2)
+
+insert into subscribers values(1, 'john', 9090909090)
+insert into subscribers values(2, 'paul', 9191919191)
+
+
+execute InsertSubscriptionHistory 1234567890, 1
+execute InsertSubscriptionHistory 1234567891, 2
+
+execute InsertSubscriptionHistory 1234567891, 1
+
+select * from books_subscription_history
+
+exec InsertBookStatistics 1234567890,10,2,8
+exec InsertBookStatistics 1234567891,10,2,8
+
+select * from book_statistics
+
+--insert in the books table, immediately a new record should be entered in the book_statistics table with default total count value: 10, subscribed count:0 and available_count: 10
+
+
+
+
+
+
+

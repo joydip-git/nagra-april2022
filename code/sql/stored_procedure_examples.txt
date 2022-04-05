@@ -1,0 +1,36 @@
+--stored procedures: pre-compiled sql statement which can be created once, saved in database and executed again and again. provides reusability, pre-compilation etc.
+
+alter procedure InsertSubscriptionHistory
+
+@bookid int,
+@subscriberid int
+
+as
+begin
+declare @currentdate date
+select @currentdate= GETDATE()
+declare @enddate date
+select @enddate= DATEADD(D,7,@currentdate)
+insert into books_subscription_history(book_isbn,subscriber_id,start_date,end_date) values(@bookid,@subscriberid,@currentdate,@enddate)
+end
+
+alter procedure InsertBookStatistics
+@bookid int,
+@total int,
+@subscribed int
+as
+begin
+declare @available int
+set @available = @total - @subscribed
+insert into book_statistics(book_id,total_count,subscribed_count,available_count) values(@bookid,@total,@subscribed,@available)
+end
+
+create procedure UpdateBookStatisticsOnSubscription
+@bookid int
+as
+begin
+declare @available int, @subscribed int
+select @available= available_count from book_statistics
+select @subscribed= subscribed_count from book_statistics
+update book_statistics set subscribed_count=@subscribed+1, available_count=@available-1 where book_id=@bookid
+end
