@@ -127,6 +127,15 @@ entry_id(pk)	book_isbn(fk)	subscriber_id(fk)	sub_start_date	sub_end_date
 3		1234567890		2		4/5/20222	4/12/2022
 4		1234567809		2		4/5/20222	4/12/2022
 
+Transaction: 
+	group of operations part of a set
+	ACID property
+
+	read-write
+
+	a. debiting from Babin's a/c
+	b. crediting into Joydip's a/c
+
 1. database
 2. RDBMS
 3. how data is organized in RDBMS database?
@@ -136,14 +145,43 @@ entry_id(pk)	book_isbn(fk)	subscriber_id(fk)	sub_start_date	sub_end_date
 7. composite key and association table
 8. foreign key
 9. query:
-	a. create database, create table, alter table
-	b. selecting records
-	c. 
+	a. DDL: create database, create table, alter table, drop etc. 
+	b. DML: fetcing, insertion, updation, deletion of records
+	c. DCL: grant, revoke etc.
+	d. TCL: rollback, commit etc.
 10. constraints: 
 	a.
 	b.
 	c.
 	.............
+
+account_id	account_balance		account_name	
+-----------------------------------------------------------
+10101010	10000			babin
+12121212	90000			joydip
+
+5000
+1000
+update accounts set account_balance=account_balance-6000 where account_id=10101010
+
+update accounts set account_balance=account_balance-5000 where account_id=10101010
+update accounts set account_balance=account_balance+5000 where account_id=12121212
+
+commit:
+update the account balance of both accounts
+
+rollback:
+
+A: Atomicity: set of operations is considered as one unit, NOT as individual anymore 
+C: Consistency: does what it meant to do
+I: Isolation/Isolated: every transaction should be isolated from each other, that they don't peep into each other/crash into each other, creating a deadlock situation
+D: Durability: should be durable enough to withstand the any external issue: power failure etc.
+
+locking:
+	pesimistic
+	optimistic
+
+savepoint
 
 	
 
