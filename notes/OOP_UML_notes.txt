@@ -1,7 +1,7 @@
 1. OOP
 	1. Inheitance
-	2. Encapsulation
-	3. data abstraction
+	2. Encapsulation: placing data members and functionalities together inside a class, is known as encapsulation
+	3. data abstraction: hiding the data of an object (private)
 	4. polymorphism
 
 PIE theory
@@ -65,28 +65,96 @@ account		acountid		int (numerical, non-fractional)
 
 class account
 {
-	int acountid;
-	string accountholdername;
-	string accounttype;
-	float accountbalance;
-	float minimumbalance;
-	float withdrawallimit;
+	//fields, data members, attributes. characterestics
+	private int acountid;
+	public string accountholdername;
+	private string accounttype;
+	private float accountbalance;
+	private float minimumbalance;
+	private float withdrawallimit;
 
-	debitAmount(float amount)
+	~account()
 	{
-		float temporary;
 	}
 
-	creditAmount(float amount)
+	//default constructor: assigns default values to the data members
+	public account()
 	{
+	}
+
+	//parameterized constructor: assigns passed/parameter values to the data members
+	//arguments of the function which are also local ti the function only
+	public account(int id, string name, string type, float balance, float limit, float minbalance)
+	{
+		acountid = id;
+		accountholdername = name;
+		accounttype = type;
+		accountbalance = balance;
+		minimumbalance = minbalance;
+		withdrawallimit = limit;
+	}
+
+        public int getAccountId()
+	{
+		return accountid;
+	}
+
+	//methods, functinalities, behaviors
+	public float debitAmount(float amount)
+	{
+		int x = 10;
+		accountbalance = accountbalance - amount;
+		return accountbalance;
+	}
+
+	public void creditAmount(float amount)
+	{
+		accountbalance = accountbalance + amount;
+		//return accountbalance;
 	}
 }
 
 object => instance created based on the schema/blueprint known as class, which decides value for which attributes should be part of that object and which functionalities are part of that object
 
  akashObjRef = account() (python)
- account akashObjRef =  new account(); (C++, java, C#)
- account akashObjRef; (C++)
+ //account akashObjRef; (C++)
+
+ account akashObjRef =  new account(1,"akash","savings",1000, 10000,500); (C++, java, C#)
+ akashObjRef.debitAmount(200);
+ akashObjRef.creditAmount(300);
+
+account devanadObjRef =  new account(2, "devanand","current",2000,20000,0);
+//devanadObjRef.accountid=2
+devanadObjRef.getAccountId();
+devanadObjRef.debitAmount(200);
+devanadObjRef.creditAmount(300);
+
+devanadObjRef = null;
+
+constructor?????:
+	- special type of function, without any return type, NOT EVEN void and with the name same as that of a class
+	- initialize the data members of the object
+	- does not return anything
+	- it is called during object creation (neither before, nor after, never called with the object reference)
+
+1. runtime finds out the data members of the class
+2. runtime allocates memory block for each of them
+3. runtime puts default values in those memory blocks by invoking the constructor
+
+4. upon creation of the object the initial address of the object is returned and assigned to a variable by runtime
+5. now, with the reference/address of that object you can access other members of the object
+
+destructor:
+
+class filehandler/databasehandler
+{
+   string filePath;
+   writeIntoFile(string data){}
+   readFromFile(){}
+}
+
+
+access specifiers:
 
 
 
