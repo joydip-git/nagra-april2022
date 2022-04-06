@@ -199,6 +199,8 @@ user-defined functions
 where, group-by, order by, having, distinct
 joins- inner, outer, cross join, self join
 
+Column 'books_subscription_history.entry_id' is invalid in the select list because it is not contained in either an aggregate function or the GROUP BY clause.
+
 	
 
 

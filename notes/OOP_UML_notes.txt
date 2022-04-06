@@ -1,0 +1,97 @@
+1. OOP
+	1. Inheitance
+	2. Encapsulation
+	3. data abstraction
+	4. polymorphism
+
+PIE theory
+
+a. class, object
+b. constructor and destructor
+c. virtual and overriding
+d. abstract class
+e. interface
+
+2. UML: Unified Modelling Language
+	
+
+Layered architecture: 3 tier architecture
+	a. data access logic
+	b. business logic
+	c. presentation logic
+
+
+Object:
+	a. attributes or properties: gender, height, complexion, name etc. [data]
+	b. behavior: run, jog, cook, sleep, write code, learn, read, write [functionalities]
+
+name	height	
+------------------------
+akash	5.6   => object
+animesh 5.10  => object
+shruti  5.3   => object
+
+{ name: "akash", height: 5.6 }
+{ name: "akash", height: 5.6 }
+{ name: "akash", height: 5.6 }
+
+
+name, height, complexion, company, location, salary, edu-background, experience
+
+account-holder-name, account-id, account-balance, type-account, minimum-balanace, withdrawal-limit
+-------------------------------------------------------------------------------------------------------
+akash			1	1000			savings	500			5000
+abhishek		2	2000			current	0			10000	
+
+create table(
+account_id int,
+acc_holder_name varchar(50),
+acc_balance decimal(18,2),
+type_acc varchar(10),
+min_balance decimal(18,2),
+with_limit decimal(18,2)
+)
+
+insert into table-name (column-names...) values(values...)
+
+class name	attributes 		data-types
+-----------------------------------------------------------------------------------------
+account		acountid		int (numerical, non-fractional)
+		accountholdername	string/char array
+		accountbalance		decimal/float (numerical, fractional)
+		accounttype		string/char array
+		minimumbalance		decimal/float (numerical, fractional)
+		withdrawallimit		decimal/float (numerical, fractional)
+
+class account
+{
+	int acountid;
+	string accountholdername;
+	string accounttype;
+	float accountbalance;
+	float minimumbalance;
+	float withdrawallimit;
+
+	debitAmount(float amount)
+	{
+		float temporary;
+	}
+
+	creditAmount(float amount)
+	{
+	}
+}
+
+object => instance created based on the schema/blueprint known as class, which decides value for which attributes should be part of that object and which functionalities are part of that object
+
+ akashObjRef = account() (python)
+ account akashObjRef =  new account(); (C++, java, C#)
+ account akashObjRef; (C++)
+
+
+
+
+
+
+
+	
