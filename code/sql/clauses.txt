@@ -1,0 +1,33 @@
+--where clause
+select book_isbn, start_date from books_subscription_history where subscriber_id=1
+update books_subscription_history set start_date=GETDATE() where subscriber_id=1 and book_isbn=1234567890
+
+--like clause
+
+select * from subscribers where subscriber_name like '%l'
+select * from subscribers where subscriber_name like 'j%'
+
+select * from subscribers where subscriber_name like '%u%'
+select * from subscribers where subscriber_name like '_u_'
+-- % represents 0, 1 or multiple characters
+-- _ represents single number or character
+
+--order by
+
+select book_isbn, start_date from books_subscription_history 
+where subscriber_id=1
+order by start_date asc	
+
+--group by  with having
+select count(start_date) as SubscriptionCount, start_date as SubscriptionDate from books_subscription_history
+group by start_date, subscriber_id
+having subscriber_id=1 and count(start_date)>0
+
+--group by with where
+select count(start_date) as SubscriptionCount, start_date as SubscriptionDate from books_subscription_history
+where subscriber_id=1
+group by start_date
+
+
+
+
