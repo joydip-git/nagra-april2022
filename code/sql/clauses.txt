@@ -28,6 +28,10 @@ select count(start_date) as SubscriptionCount, start_date as SubscriptionDate fr
 where subscriber_id=1
 group by start_date
 
+--distinct
+select distinct start_date from books_subscription_history
+
+
 
 
 
