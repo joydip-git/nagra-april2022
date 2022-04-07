@@ -156,7 +156,125 @@ class filehandler/databasehandler
 
 access specifiers:
 
+code reusability
 
+
+Developer
+Hr
+
+//base or parent class
+class emloyee
+{
+	//attributes or data members are inherited into the derievd class
+	protected string name;
+	protected int id;
+	protected float basicPay:
+	protected float daPay;
+	protected float hraPay;	
+
+	//constructors are not inherited into the derievd class
+	public employee(){}		
+}
+
+//child/derived class
+class developer:employee
+{
+	private:
+		float incentivePay;
+
+	public:
+		developer()
+		{
+		}
+		
+		developer(string name, int id, float basic, float da, float hra, float incentive)
+		{
+			this.name = name;
+			this.id = id;
+			this.basicPay = basic;
+			this.daPay = da;
+			this.hraPay = hra;
+			this.incentivePay = incentive;
+		}
+
+		float calculateSalary()
+		{
+			return this.basicPay + this.daPay + this.hraPay + this.incentivePay;
+		}
+}
+
+class juniorDeveloper:developer{ }
+//child/derived class
+class hr:employee
+{
+	float gratuityPay;
+
+	
+	public hr()
+	{
+	}
+		
+	public hr(string name, int id, float basic, float da, float hra, float gratuity)
+	{
+		this.name = name;
+		this.id = id;
+		this.basicPay = basic;
+		this.daPay = da;
+		this.hraPay = hra;
+		this.gratuityPay = gratuity;
+	}
+
+	public float calculateSalary()
+	{
+		return this.basicPay + this.daPay + this.hraPay + this.gratuityPay;
+	}
+}
+
+class laptop
+{
+	string name;
+	float price;
+}
+
+
+
+
+
+public employee(string name, int id, float basic, float da, float hra)
+	{
+		this.name = name;
+		this.id = id;
+		this.basicPay = basic;
+		this.daPay = da;
+		this.hraPay = hra;
+	}
+
+
+
+//the method is inherited into the derievd class
+	public float calculateSalary()
+	{
+		return this.basicPay + this.daPay + this.hraPay;
+	}
+
+inheritance:
+	single-level: one base <-- one child
+	multi-level: base<--child1<--child2
+	multiple: more than one base class for a child (C#, Java)
+	hybrid
+
+A <-- B <-- C
+
+	A, B <-- C
+
+
+printer <-- deskjet <--home deskjet
+
+A=> f1(), f2()
+B=> f1(), f3()
+
+C obj = new C();
+obj.f1();
 
 
 
