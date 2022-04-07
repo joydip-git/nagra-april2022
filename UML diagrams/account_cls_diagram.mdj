@@ -1736,6 +1736,14 @@
 							"target": {
 								"$ref": "AAAAAAGAAl4BppLdnng="
 							}
+						},
+						{
+							"_type": "UMLClass",
+							"_id": "AAAAAAGAA4jI15XFHOs=",
+							"_parent": {
+								"$ref": "AAAAAAGAAmbz45PeA/s="
+							},
+							"name": "Class1"
 						}
 					],
 					"attributes": [

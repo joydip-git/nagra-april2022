@@ -537,6 +537,37 @@ developer, hr  are all types of employee
 
 is-a
 
+has-a
+
+products (1-1)
+pid(pk) pname price desc image cid(fk) references category(caid)
+-----------------------------
+
+catgeory(1-M)
+caid(pk) cname
+--------------------------
+
+class product{ 
+	string name; 
+	int id;
+	float price; 
+	category categoryInfo;
+
+}
+class category
+{ 
+	int cid; 
+	string name;
+	product[] products;
+}
+
+UML diagram types:
+	a. structural: static features of the s/w system
+		class diagram, object diagram, deployment diagram, package diagram, component diagram
+	b. behavioral: interaction that happens in the system
+		activity diagram, interaction diagram, use case diagram
+
+
 
 	
 	

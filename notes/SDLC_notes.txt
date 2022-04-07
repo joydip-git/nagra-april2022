@@ -1,0 +1,24 @@
+SDLC: 
+	software development life cycle
+	a. gathering requirements (requirement analysis) 
+		a. login/logout 
+		b. scroll through the products
+		c. temporarily add selected products
+		d. place an order
+		e. payment
+		f. confirmation message
+		g. track delivery
+	b. planning
+	c. design
+	d. coding
+	e. testing
+	f. deployment
+	
+PLCM
+
+models:
+	waterfall model
+	v-model
+	spiral model
+	agile
+	devops
