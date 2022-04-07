@@ -166,14 +166,31 @@ Hr
 class emloyee
 {
 	//attributes or data members are inherited into the derievd class
-	protected string name;
-	protected int id;
-	protected float basicPay:
-	protected float daPay;
-	protected float hraPay;	
+	private string name;
+	private int id;
+	private float basicPay;
+	private float daPay;
+	private float hraPay;	
 
 	//constructors are not inherited into the derievd class
-	public employee(){}		
+	//if no constructor is written inside a class, at least the default ctor will be supplied
+	//but if you write a parameterized ctor inside the class, then NO DEFAULT CTOR will be supplied
+	//if you write a parameterized ctor inside the class, better write the default ctor also, since this class might be derived into child class
+
+	public employee(){}
+	public employee(string name, int id, float basic, float da, float hra)
+	{
+		this.name = name;
+		this.id = id;
+		this.basicPay = basic;
+		this.daPay = da;
+		this.hraPay = hra;
+	}
+
+	public float calculateSalary()
+	{
+		return this.basicPay + this.daPay + this.hraPay;
+	}		
 }
 
 //child/derived class
@@ -189,17 +206,14 @@ class developer:employee
 		
 		developer(string name, int id, float basic, float da, float hra, float incentive)
 		{
-			this.name = name;
-			this.id = id;
-			this.basicPay = basic;
-			this.daPay = da;
-			this.hraPay = hra;
+			super(name, id, basic,da,hra);
 			this.incentivePay = incentive;
 		}
 
 		float calculateSalary()
 		{
-			return this.basicPay + this.daPay + this.hraPay + this.incentivePay;
+			float partialSalary = super.calculateSalary();
+			return partialSalary + this.incentivePay;
 		}
 }
 
@@ -212,50 +226,35 @@ class hr:employee
 	
 	public hr()
 	{
-	}
+	}	
+	
 		
 	public hr(string name, int id, float basic, float da, float hra, float gratuity)
 	{
-		this.name = name;
-		this.id = id;
-		this.basicPay = basic;
-		this.daPay = da;
-		this.hraPay = hra;
+		super(name, id, basic,da,hra);
 		this.gratuityPay = gratuity;
 	}
 
+	@override
 	public float calculateSalary()
 	{
-		return this.basicPay + this.daPay + this.hraPay + this.gratuityPay;
+		float partialSalary = super.calculateSalary();
+		return partialSalary + this.gratuityPay;
 	}
 }
+
+//when you create an instance of a child class, not only the constructor of the child class is invoked (the one you are invoking), side by side, the default constructor of the base class will be invoked by runtime, implicitly
+
+hr hrObj = new hr('anil',1,1000,2000,3000,4000);
+hrObj.calculateSalary();
+//hrObj.name=''
+developer devObj = new developer('sunil',2,1500,2500,3500,4500);
 
 class laptop
 {
 	string name;
 	float price;
 }
-
-
-
-
-
-public employee(string name, int id, float basic, float da, float hra)
-	{
-		this.name = name;
-		this.id = id;
-		this.basicPay = basic;
-		this.daPay = da;
-		this.hraPay = hra;
-	}
-
-
-
-//the method is inherited into the derievd class
-	public float calculateSalary()
-	{
-		return this.basicPay + this.daPay + this.hraPay;
-	}
 
 inheritance:
 	single-level: one base <-- one child
@@ -275,6 +274,108 @@ B=> f1(), f3()
 
 C obj = new C();
 obj.f1();
+
+
+SOLID:
+	s: single responsibility
+	O: open close principle (open for extension, closed for change)
+	L: 
+	I: 
+	D: dependency injection
+
+
+int x = 10;
+int y = 20;
+int z = x+y;//30
+
+string s1 = 'john'
+string s2 = 'michelin'
+string fullname = s1+s2;//john michelin
+s1.Concatenate(s2)
+
++ <= operator //operator overloading
+
+class Addtion
+{
+	//method overloading
+	public void Add(int x, int y){}//invocable
+	public void Add(int x, int y, int z){}
+	public void Add(int x, int y, float z){}
+	public void Add(int x, float y, int z){}
+}
+signature of a function: <return type> <method-name>(arguments....)
+1. number of arguments
+2. data type of arguments
+3. order/position of the arguments
+Note: return type does not play any role in the difference between the methods w.r.t. polymorphism
+
+Addition additionObj = new Addition();
+additionObj.Add(12,13); //invocation
+additionObj.Add(12,13.45,14);
+
+during compilation time: (compiler needs to detect which method to be called, for a particular invocation)
+binding between the invocation line and the method to invoke
+
+polymorphism: 
+a. compile time or static polymorphism: one class involved (no inheritance involved here)
+	1. function overloading
+	2. operator overloading
+b. dynamic polymorphism: minimum two classes=> base and a child (inheritance involved here)
+	1. function overriding (base class method gets overriden by child class method)
+
+
+Hair stylist			butcher			film director
+----------------------------------------------------------------------------
+void cut(){}			void cut(){}		void cut(){}
+
+			animal
+			makesound()
+
+
+cat:animal		dog:animal		bird:animal
+------------------------------------------------------------------------
+void makesound()	void makesound()	void makesound()
+
+callmakesound(animal animalObj)
+{
+	animalObj.makesound();
+}
+
+cat c = new cat();
+dog d = new dog();
+bird b = new bird();
+callmakesound(c)
+callmakesound(d)
+callmakesound(b)
+
+//upcasting:
+animal animal1 = new cat();
+
+//downcasting:
+cat c = (cat)animal1;
+
+
+dataaccess
+	getdata();
+
+dataaccessfromfile:dataaccess
+	getdata():implementation (code to read data from file)
+
+dataaccessfromdatabase:dataaccess
+	getdata():implementation (code to read data from database)
+
+
+hr => 
+	float calculateSalary() (inherited), 
+	float calculateSalary() (own)
+
+hrObj.calculateSalary()
+devObj.calculateSalary()
+
+
+
+
+	
 
 
 
