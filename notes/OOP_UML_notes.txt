@@ -171,6 +171,7 @@ class emloyee
 	private float basicPay;
 	private float daPay;
 	private float hraPay;	
+	protected static float joiningbonus=100000;
 
 	//constructors are not inherited into the derievd class
 	//if no constructor is written inside a class, at least the default ctor will be supplied
@@ -189,7 +190,7 @@ class emloyee
 
 	public float calculateSalary()
 	{
-		return this.basicPay + this.daPay + this.hraPay;
+		return this.basicPay + this.daPay + this.hraPay + joiningbonus;
 	}		
 }
 
@@ -358,10 +359,10 @@ cat c = (cat)animal1;
 dataaccess
 	getdata();
 
-dataaccessfromfile:dataaccess
+dataaccessfromfile: dataaccess
 	getdata():implementation (code to read data from file)
 
-dataaccessfromdatabase:dataaccess
+dataaccessfromdatabase: dataaccess
 	getdata():implementation (code to read data from database)
 
 
@@ -371,6 +372,174 @@ hr =>
 
 hrObj.calculateSalary()
 devObj.calculateSalary()
+
+abstract class dataaccess
+{
+	public abstract string getdata();
+}
+class dataaccessfromfile:dataaccess
+{
+	@override
+	public string getdata(){ //code (some other implementation) super.getdata(); }
+}
+class dataaccessfromdatabase:dataaccess
+{
+	@override
+	public string getdata(){ //code (some other implementation) //super.getdata(); }
+}
+
+dataaccessfromfile da = new dataaccessfromfile();
+da.getdata();
+
+abstract class person
+{
+	string name;
+	public person(){}
+	public person(string name){ this.name = name; }
+	//public:
+		//boolean isOutstanding()=0;
+	public abstarct boolean isOutstanding();
+	public string printInfo()
+	{
+		return this.name;
+	}
+	public void foo(){}
+}
+
+//person p = new person();
+//p.isOutstanding();
+
+
+//must implement the abstract methods of abstract base class
+//otherwise this child class will also become an abstract class
+class student:person
+{
+	float marks;
+	public student(){}
+	public student(string name, float marks)
+	{ 
+		super(name);
+		this.marks = marks;
+	}
+	boolean isOutstanding()
+	{
+		if(marks>85)
+			return true;
+		else
+			return false;
+	}
+	public string printInfo()
+	{
+		return super.printInfo()+' '+this.marks;
+	}
+}
+
+class professor:person
+{
+	int bookspublished;
+	public professor(){}
+	public professor(sting name, int books)
+	{ 
+		super(name); 
+		this.bookspublished = books; 
+	}
+	boolean isOutstanding()
+	{
+		if(bookspublished>5)
+			return true;
+		else
+			return false;
+	}
+	public string printInfo()
+	{
+		return super.printInfo()+' '+this.bookspublished;
+	}
+}
+
+
+1. an abstract method: no implementation, only declaration
+	this method can never be called
+
+2. an abstract class: a class with at least one abstract method
+	object of this class can't be created
+	can be combination of both abstract and non-abstract method	
+	used as buleprint for other classes
+	an abstract class, when inherited in a child class, the child class must implement all the abstract methods of the abstract base class, otherwise it will become abstract itself
+
+abstract pattern: a design pattern, where we create abstract classes, with lots of abstract (and some non-abstract also) methods, which we intend that some other child classes will inherit and not only that, MUST implement them too. this is a way of forcing the child classes to ha ve the same method, that we want, as well as provide their own implementation.
+
+	abstract base class never takes rseponsibilty of implementation, just provides declaration of the methods that a child must have
+
+interface:
+	a pure abstract class
+	only abstract methods can be here
+	practically a virtual table of abstract methods
+
+
+interface IDataAccess
+{
+	string getData();
+	void f1();
+}
+
+interface IReport
+{
+	void generateReport();
+	void f1();
+}
+
+class A implements IDataAccess,IReport
+{
+	public string getData(){}
+	public void generateReport(){}
+	public void f1(){}
+}
+
+static data/method:
+	not part of any object of the class
+	shared across all objects of that class
+	never accessed with class object reference (not even using this keyword)
+	accessed always with class name
+
+employee.joiningbonus
+developer.joiningbonus
+
+interface MoneyTransfer
+{
+	bool TransferMoney();
+}
+
+class InternetBanking:MoneyTransfer
+{
+	public bool TransferMoney(){}
+}
+
+class UpiTransfer:MoneyTransfer
+{
+	public bool TransferMoney(){}
+}
+class CrediCardBanking:MoneyTransfer
+{
+	public bool TransferMoney(){}
+}
+
+
+Unified Modelling Language: (UML)
+standard language for design, visualization etc. of s/w system
+pictorial language
+make blueprints for s/w
+
+OMG: ObjectManagement Group 1996-97
+
+
+conceptual model:
+developer, hr  are all types of employee
+
+is-a
+
+
+	
+	
 
 
 
