@@ -1,6 +1,7 @@
 SDLC: 
 	software development life cycle
 	a. gathering requirements (requirement analysis) 
+		customer:
 		a. login/logout 
 		b. scroll through the products
 		c. temporarily add selected products
@@ -8,11 +9,15 @@ SDLC:
 		e. payment
 		f. confirmation message
 		g. track delivery
+		
+		admin:
+		h. add products into inventory
+		i. update products in an inventory
 	b. planning
 	c. design
 	d. coding
 	e. testing
-	f. deployment
+	f. deployment and maintenance
 	
 PLCM
 
@@ -22,3 +27,195 @@ models:
 	spiral model
 	agile
 	devops
+
+planning: feasibility study
+		areas: economical, operational and technical
+
+SRS (software requirement specification): 
+	define and document the product requirements and get that approved from the customer
+	is done through a document of a particular format
+
+Design:
+	product architecture is proposed based on the SRS
+	more than one architecture will be created
+	document: DDS (Design Document Specification)
+
+
+
+interface IDataAccess
+{
+	getData()
+	addData()
+	deleteData()
+	updateData()
+	getDataById()
+	filterData()
+}
+
+class TransactionDataAccess implements IDataAccess
+{
+
+}
+
+interface IBusiness
+{
+	fetchData(choice)
+	addData()
+	deleteData()
+	updateData()
+	getDataById()
+	filterData()
+}
+
+class Business implements IBusiness
+{
+	fetchData(choice){ DataAccess da = new DataAccess(); da.getData() }
+}
+
+N data access classes
+N business classes
+
+service layer
+
+class AppService
+{
+	m1()
+	m2()
+	m3()
+}
+
+
+http://..../app/m1
+
+
+waterfall model:
+1. requiment gathering and specification:
+	a. requirement gathering and analysis
+	b. requirement specfication
+
+2. feasibility study
+
+3. design
+4. coding and unit testing
+5. integration and system testing
+	modules are integrated incrementally and then tested
+	after all the modules have been integrated we conduct system testing
+	a. alpha
+	b. beta
+	c. acceptance
+6. Maintenance
+	a. corrective maintenance
+	b. perfective maintenance
+	c. adaptive maintenance
+
+spiral model:
+	it provides support for risk handling
+
+phases:
+	1. objective determination and identify alternative solution:
+	2. identify and resolve the risks
+	3. develop the next version of the product
+	4. review and plan for the next phase
+
+RAD:
+	4 phases:
+	1. requiment analysis and planning
+	2. User description
+	3. Construction
+	4. Cutover
+
+each module delivery time : 60 -90 days
+
+		RAD				Traditional SDLC
+-----------------------------------------------------------------------------------------------------------
+1. stages of SDLC are not well defined		1. stages are well defined
+2. different stages of app development can be reviewed and repeated, since the approach here is iterative
+						2. follows a predicitive approach, inflexible
+3. automative RAD tools to help you with faster prototype building
+						3. building prototypes is time consuming effort
+4. you don't need to understand all the requiements at the begining
+						4. understand all the requiements at the begining
+5. easy to accomodate changes			5. it is not so easy
+6. feedback					6. limited feedback
+7. minimum docs					7. lots of documents
+8. small teams handle each module		8. no modularisation, hence larger team is required
+
+
+Agile Model:
+-------------------------------------------
+what are the challenges faced by people during development?
+handling change requests from the customer during the project development and the high cost and time factor to accomodate those changes are the main challenges
+
+main idea was to adapt changes quickly
+
+group development process
+
+examples:
+	Crystal
+	Atern
+	Scrum
+	XP (Extreme programming)
+	Lean development
+	Unified process
+
+Agile is the combination of iterative and incremental process model
+
+RG, RA, Design, Coding, Unit testing and acceptance testing
+
+entire requirements are broken down into smaller pieces
+one iteration - one module plan, design, develop, test and deploy
+short term plan - NO long-term plan
+
+Time Box: time taken to complete iteration
+
+Pair programming
+
+1. adapt changes quickly
+2. reduced cost and quick delivery
+3. reduced development time
+4. customer satisfaction
+etc.
+
+1. lack of formal documentation
+
+Scrum: is an agile framework
+
+1. Sprint: 
+2. Release:
+3. Sprint review: 
+4. sprint retrospective:
+5. Product backlog:
+6. Sprint backlog: 
+	a. product assigned features to the sprint
+	b. sprint planning meeting
+
+Kanban, XP
+
+c. daily scrum meeting
+d. product backlog refinement
+
+a. <5
+b. 5 & 9 (6 +3/-1)
+c. 10 -15
+d. 50
+
+a. sprint will be extended
+b. sprint ends with the done part
+c. sprint will be cancelled
+d. unfinished sprint items will be removed from the sprint backlog
+
+connective
+disconnected
+collaborative
+contemplative
+
+plans over people
+people over process
+process over people
+plans over process
+
+scrum team
+scrum master
+product owner
+none
+	
