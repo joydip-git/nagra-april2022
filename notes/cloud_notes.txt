@@ -132,6 +132,48 @@ host		CSP		Enterpries(TP)	Enterprise(TP)	Third party
 Users		all		selected users	selected users	community members
 access		internet	internet, VPN	Internet, VPN	Internet, VPN
 Owner		CSP		Enterprise	Enterprise	Community
+
+IaaS				PaaS					SaaS
+------------------------------------------------------------------------------------------
+virtual data centeres		virtual platforms, tools to create	softwares as services
+VMs, VSs			tools and runtime enviroments		software
+used by neywrok architects	developers				end users
+ONLY infratsructure		Infrastructure+Platform			Infrastructure+Platform+software
 	
+
+what is virtualization?
+	server, alptop, storage device, OS, ntework architecture
+
+it is a tehnoque
+allows to share single physical instance of a resource or an application among multiple customers and organizations
+assigns logical name to a physical resource and provides a pointerto that physical resource
+
+H/W virtualization:
+create a VM over existing O/S and hardware
+Host machine: on which virtualization takes place
+Guest machine: the VM
+
+types of virtualization:
+1. H/w: when the VM or VMM is installed directly on the hardware system
+2. OS
+3. Server
+4. Storage
+
+VM and VMM
+Hyprevisor: Virtual Machine Manager/Monitor
+
+OS:
+when you install VM software or VMM on the host computer instead of directly on the harddware system is OS virtualization
+
+Server virtualization:
+install VM software or VMM on the server machine directly
+scaling of your application across multiple server machines
+
+storage virtualization:
+back up and recovery
+
+data virtualization:
+
+
 
 	
