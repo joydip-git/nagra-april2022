@@ -47,4 +47,73 @@ disadvantges:
 
 history:
 	salesforce.com 
+
+service provider
+machine: RESTful API (Representational State Transfer)
+class Service [remote clas]
+{
+	public string[] getDbData(){}
+	public string getSomeDbdata(int id){}
+}
+API matching feature: the request is mapped to proper API using the URL and the HTTP protocol method
+web server
+
+client:service consumer
+Java application, dotnet application, python app
+http://.../Service/ (GET)
+http://.../Service/1 (GET)
+
+HTTP: GET, POST, PUT , DELETE, OPTIONS, PATCH etc.
+
+JSON: state of data
+{"name":"joydip", "id":1, "salary":1000}
+
+<employee>
+	<id>1</id>
+	<name>Joydip</name>
+	<salary>1000</salary>
+</employee>
+
+Loose coupling
+
+components of cloud architecture:
+A. client infrastructure: front end component, GUI to interact with the cloud
+B. application: may be a s/w or platform that a client wants to access
+C. service: manages which type of service you access
+
+3 types of services:
+1. IaaS: responsible for managing application data, midleware, runtime environments (AWS EC2), GCE (Google Computing Engine), Cisco Metapod
+2. PaaS: windows azure, Openshift. is very similar to SaaS, but PaaS provides a platform for s/w creation, using SaaS, we can access s/w over the internet
+3. SaaS: cloud application services. Google Apps, Salesforce Dropbox, Slack, Cisco webex
+
+D. runtime cloud: provides execution and runtime environment for the VMs
+E. Storage: 
+F. Infrastructure: provides services on 3 different levels:
+	a. host level
+	b. application level
+	c. network level: h/w and s/w components servers, storage, netwrok devices, virtualization s/w
+G. Management: 
+H. Security: 
+I. Internet
+
+how does exactly this cloud computing works?
+
+different cloud applications:
+a. Art: Moo, Vistaprint, Adobe Creative Cloud
+b. Business: Paypal, Slack etc., Office 365
+c. Back up and data storage: Google G Suite, Mozy, One Drive
+d. Entertainment:
+e. Social: LinkedIn, Twitter, facebook etc.
+
+Security risks cloud comouting:
+	Data Loss
+	Hacked Interfaces and Insecure APIs
+	Data Breach
+	Vendor lock-in
+	Increased Complexity
+	DoS (Denial of Services) attacks
+	account hijacking
+	spectre and meltdown
+	
+
 	
