@@ -114,6 +114,24 @@ Security risks cloud comouting:
 	DoS (Denial of Services) attacks
 	account hijacking
 	spectre and meltdown
+
+Types of cloud:
+	public: open to all, pre-per-usage. managed and operated by CSP (Cloud service provider)
+	private: internal or corporate cloud. it can deployed using Opensource, such as Openstack, Eucalyptus
+		NIST: National Institue of Standards and Technology (NIST) divides privte cloud:
+		a. On-premise
+		b. Outsourced
+	HP data centers, EPC (Elastic Provate Cloud), Ubuntu
+	hybrid: private +public, Google Application Suite (Gmail, Drive etc.), Office 365, one Drive AWS
+	community: shared by several organizations of similar fraternity
+
+
+parameters	public		private		hydbrid		community
+------------------------------------------------------------------------------------
+host		CSP		Enterpries(TP)	Enterprise(TP)	Third party
+Users		all		selected users	selected users	community members
+access		internet	internet, VPN	Internet, VPN	Internet, VPN
+Owner		CSP		Enterprise	Enterprise	Community
 	
 
 	
