@@ -1,0 +1,50 @@
+Cloud computing:
+	virtulaization-based technology
+	a network or the internet
+	to create, configure and customize applications via internet connection
+	remote servers on the internet
+	to store and manage and access data online rather than local drives
+	the data: files, images, documents, audio, video, application etc.
+	includes: a development platform, hard disk, s/w applications, and database
+
+what we can do using cloud?
+	develop new applications and services
+	storage, backup and recovery of data
+	hosting blogs and websites
+	delivery of s/w on demand basis
+	analysis of data
+	stream videos and audios
+	etc.
+
+
+why cloud computing:
+	to reduce the cost and management of robust in house IT infrastructue
+
+what are the characterestics of cloud computing:
+	a. agility
+	b. availability and reliability
+	c. scalability: on-demand resources on a large scale
+	d. multi-sharing
+	e. device and location indepdence
+	f. maintenance
+	g. low cost
+	h. services in the pay-per-use mode
+
+advantages:
+	a. data security
+	b. low cost due to pay-per-use mode
+	c. unlimited storage capacity
+	d. mobility
+	e. accessibilty
+	f. back up and store data
+	g. much better collaboration
+
+disadvantges:
+	a. internet connection
+	b. vendor lock-in
+	c. limited control
+	d. security
+
+history:
+	salesforce.com 
+	
