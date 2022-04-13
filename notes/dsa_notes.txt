@@ -1,0 +1,266 @@
+algorithm: set of well-defined instructions to solve a problem (a formal way to represent the solution)
+-----------------------------------------------------------------------------------------------------------
+ask user to enter 1st value
+store it in a
+ask user to enter 2nd value
+store it in b
+add the values in a and b
+store the result in c
+print the result stored in c
+
+or
+
+Take two number inputs 
+Add numbers using the + operator
+Display the result
+
+qualities of good algorithms:
+-----------------------------------
+a. input and output should be defined precisely
+b. every step of an algorithm should be clear and not ambiguous
+c. it should be the most effective among all possible solutions
+d. NEVER should include computer code
+
+
+#include <stdio.h>
+......
+
+main(){
+	printf()
+	scanf()
+	int a =10;
+	int b = 20;
+	int c = a+b;
+	printf(c);
+}
+
+
+step1: start
+step2: declare variables a, b, and c
+step3: read values and store in and b
+step4: add a and b and assign the result to c
+	c <- a+b
+step5:  display c
+step6: stop
+
+step1: start
+step2: declare three variables a, b, and c
+step3: read variables a, b, and c
+step4: If a>b
+	If a>c
+		Display a is the largest number
+	Else
+	   If b>c
+		Display b is the largest number
+	   Else
+   		Display b is the largest number
+step5: stop
+
+data structure:
+	storage that is used to store and organize data in such way that it is memory and time efficient
+	it is about organizing and storing data as pat of the application in application runtime memory
+
+categories of data structure:
+	linear: elements or data will be arranged in sequential manner
+		ex: array, queue, stack, linked list
+	non-linear: elements or data will be arranged in hierarchical manner. one element is connected to another element
+		ex: tree, graph
+
+
+			linear						non-linear
+-------------------------------------------------------------------------------------------------------------------------
+elements or data will be arranged in sequential manner	 elements or data will be arranged in hierarchical manner. one 							 element is connected to another element
+all elememts are in same layer			elements are not at the same layer
+it can be traversed in a single run		in order to traverse through all the element you might need multiple runs
+memory utilization is not that efficient	these data structures helps you use memory more efficiently
+time complexity increase in case of large amount of data		time complexity remains the same
+
+Linear data structure:
+
+Array: collection similar type of elements
+
+int[] numbers = new int[4];
+[]=>indexer
+[index-number]
+
+numbers[0]=12
+numbers[1]=1
+numbers[2]=23
+//numbers[3]=3
+
+numbers[5]
+
+n, n-1
+
+int[][] matrix = new int[][] { {1,2,3,4}, {5,6,7,8}}
+
+pid(pk), pname, price, desc, image
+-------------------------------------
+..........................
+
+select * from products
+
+Stack: 
+	Last In First Out 
+	putting the item at the top of the stack: push
+	removing an item from the top of the stack: pop
+
+operations:
+	push, pop, isempty, isfull, peek
+
+how it works:
+	top: a pointer, to keep track of the topmost element of the stack
+	initialize the stack by setting top to -1
+
+	if top =-1 display empty
+
+	increase top by 1 
+	top N 
+	push element 
+	increase top by 1
+
+	pop the element
+	decrease the top by 1
+
+	before pushing the element we can check whether the stack is full or not
+	before popping element we check whether it is already empty or not
+
+def create_stack():
+	stack=[]
+	return stack
+
+def check_empty(stack):
+	return len(stack)==0
+
+def push(stack,item):
+	stack.append(item)
+	print("pushed item: "+item)
+
+def pop(stack):
+	if(check_empty(stack)):
+		return "stack is empty"
+
+	return stack.pop()
+
+stack = create_stack()
+push(stack,str(1))
+push(stack,str(2))
+push(stack,str(3))
+push(stack,str(4))
+
+
+usage:
+	a. to maintain history of navigation by browser
+	b complier uses stack for larger expression calculation in post or pre-fix form
+	c. to reverse a word
+	etc.
+
+2 + 4 / 5 * ( 7 - 9 )
+
+7-9=>*5
+
+heena
+
+a
+n
+e
+e
+h
+
+queue:
+	First In First Out (FIFO)
+	enqueue
+	dequeue
+	isempty
+	isfull
+	peek
+
+how does it work?
+	two pointers: FRONT and REAR
+	front(read/head) pointer tracks the first element of the queue
+	rear(tail/write) pointer tracks the last element of the queue
+	set the front and rear pointers to -1 at the begining
+
+	enqueue:
+	check whether queue is full or not
+	set front value to 0
+	increase rear index 1
+	add the new element in the position pointed by rear
+
+	dequeue:
+	check if the queue is empty
+	return the value pointed by front
+	increase the front pointer value by 1
+	for the last element, reset the values of front and rear to -1
+
+	full or not:
+	case 1: front == 0 && rear == size-1
+	case 2: rear = front-1
+
+usage:
+	scheduling: CPU scheduling, Disk scheduling, printers
+	interrupts in OS
+	
+
+
+main(){}<--1
+run1(){} <--3
+run2(){}<--2
+
+
+-------------------
+		   ---------------------------
+5 seconds
+
+-------------------------------
+
+--------------------------
+
+types of queue:
+	simple queue
+	circular queue
+	priority queue
+	double ended queue
+front--> 0 9<--rear
+
+0,1,2,3,4,5,6,7,8,9
+
+V	PV	PV
+-------------------
+9-->	10	0	
+8-->	7	
+7-->	5	
+6-->	3	
+5-->	1
+4-->	4
+3-->	2	7
+2-->	6	8
+1-->	9	9
+0-->	8	10
+
+0, 1, 2
+
+2, 1, 0 
+
+double ended queue:
+	insertion and deletion both can happen from both ends
+	types: 
+		input restriected: input will be restricted to one end, but deletion
+		and 
+		output restricted: output is restricted to one end
+
+	implementation:
+		circular queue
+		array 
+
+	front <1
+	front = n-1
+		
+
+
+	
+
+
+	
+
+
