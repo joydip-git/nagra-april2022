@@ -257,6 +257,188 @@ double ended queue:
 	front = n-1
 		
 
+Linked List:
+	struct node
+	{
+		int data;
+		struct node *next;
+		struct node *prev;
+	}
+
+main(){
+	struct node *head;
+	struct node *one = NULL;
+	struct node *two = NULL;
+	struct node *three = NULL;
+
+	one = malloc(sizeof(struct node))
+	two = malloc(sizeof(struct node))
+	three = malloc(sizeof(struct node))
+
+	one->data = 1;
+	two->data = 2;
+	three->data = 3;
+
+	one->next = two;
+	one->prev = NULL;
+	
+	two->next = three;
+	two->prev = one;
+
+	three->next = one;
+	three->prev = two
+
+	one->prev = three
+
+	head = one
+}
+
+
+class Node:
+	def_init_(self,item):
+		self.item = item
+		self.next = none
+
+
+class LinkedList:
+	def_init_(self):
+		self.head = none
+
+if __name__ == '__main__'
+
+linked_list = new linked_list()
+
+advantages:
+	dynamic memory allocation
+	
+
+usage:
+	dynamic memory allocation
+	implemented in stack and queue
+	in undo functionality in s/w
+	hashtable, graphs
+
+types:
+	singly
+	doubly
+	circular 
+
+array, stack, queue (simple queue, circular queue, double ended queue, priority queue), linked list (singly, doubly, circular - singly circular and doubly circular)
+
+
+Non-linear data structure:
+graph based and tree based
+
+G(E,V)
+	a collection of vertices
+	a collection of edges E, represented as ordered pairs of vertices (u,v)
+
+Adajcent=> Adjacency
+path (6->1): 6->3->1
+directed graph: E(a,b)
+
+(0,1),(0,2),(0,3)
+(1,0),(1,2)
+(2,0),(2,1)
+(3,0)
+
+Spanning Tree
+
+Strongly connected components
+
+Tree
+
+3,1,2,4,5,7,8,6,0,9,10
+
+1->9
+2->8
+3->7
+4->6
+5->5
+6->4
+7->3
+8->2
+9->1
+for(int i=0;i<arr.length();i++){
+	for(int j=i+1;j<arr.length();j++){
+		if(arr[i]>arr[j]){
+			int temp=arr[i]
+			arr[i]=arr[j]
+			arr[j]=temp
+		}
+	}
+}
+
+Node:
+n1->n2->n3->n4
+n1->n5->n6->n7->n8
+edge
+leaf
+path
+height of node
+depth of a node
+height of tree
+
+Tree:
+	Binary tree
+	Binary search tree
+	AVL tree
+	B-Tree
+
+Binary tree:
+	data item
+	address of left
+	address of right
+
+struct node{
+	int data;
+	struct node *left;
+	struct node *right;
+}
+
+Full binary tree:
+Perfect binary tree:
+complete binray tree:
+degenerate/pathological binary tree
+skewed binary tree
+balanced binary tree
+
+1. all nodes of left subtree are also less than the root node
+
+struct node *root;
+root = malloc(sizeof(struct node))
+
+If root ==NULL
+	return NULL
+
+If number == root-->data
+	return root->data
+
+if Number <root->data
+	search  (root->left)
+if(number >root->data)
+	search root->right
+
+B-Tree: (height-balanced m-way tree)
+
+insertion operation:
+	
+
+sorting and searching algorithms:
+bubble
+linear
+insertion
+selection
+quick 
+binary
+merge
+heap
+
+
+
+
+
+
 
 	
 
